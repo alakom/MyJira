@@ -1,0 +1,70 @@
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 25vw;
+  height: auto;
+  border-radius: 5px;
+  background-color: #F8F8FA;
+  padding: 15px;
+  font-size: 16px;
+  color: #2E324F;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container:hover{
+  background-color: #F5F5F5;
+}
+
+.container span {
+  color: #9FA4A7;
+}
+
+.containerStatus{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.titleProject{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titleProject span:last-child{
+  color: #2E324F;
+}
+
+.removeButton {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.removeButton path{
+  fill: #F06567;
+}
+
+.removeButton:hover path{
+  fill: #E84143;
+}
+
+@media (max-width: 1100px) {
+  .container{
+    width: 50vw;
+  }
+  .titleProject {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleProject span{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,86 @@
+.container {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 15px;
+  //gap: 10px;
+}
+
+.title {
+  font-family: 'Montserrat Alternates';
+  font-size: 26px;
+  color: #5973BD;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.createButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0;
+}
+
+.createButton button{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  width: 30vw;
+  height: 30px;
+  background-color: #5973BD;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.high::before{
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -30px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #F84C04;
+}
+
+.medium::after{
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -30px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #FDAB01;
+}
+
+.low::after{
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -30px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #408EFD;
+}
+
+.containerSelectBox{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.containerDescription {
+  max-height: 300px;
+}
+
+.containerDescription div {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 3px;
+}

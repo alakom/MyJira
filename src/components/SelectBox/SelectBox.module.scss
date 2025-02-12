@@ -1,0 +1,29 @@
+.container{
+  position: relative;
+  width: 200px;
+}
+
+.label{
+  padding: 5px;
+  border: 1px solid #EEEEEE;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #EEEEEE;
+  position: absolute;
+  width: calc(100% - 2px);
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  z-index: 5;
+}
+
+.list li {
+  padding: 5px;
+  cursor: pointer;
+}

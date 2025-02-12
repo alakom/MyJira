@@ -1,0 +1,61 @@
+.container {
+  font-size: 14px;
+  padding: 3px;
+  width: fit-content;
+  border-radius: 3px;
+}
+
+.active {
+  color: green;
+  border: 1px solid green;
+}
+
+.paused {
+  color: grey;
+  border: 1px solid grey;
+}
+
+.deleted {
+  color: red;
+  border: 1px solid red;
+}
+
+@media (max-width: 400px) {
+  .container {
+    color: transparent;
+    border: none;
+  }
+
+  .active::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
+  }
+
+  .paused::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+    background-color: grey;
+    border-radius: 50%;
+  }
+
+  .deleted::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+  }
+}

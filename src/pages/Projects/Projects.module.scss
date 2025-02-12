@@ -1,0 +1,54 @@
+.container {
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.containerProjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(25vw + 30px));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  grid-column: 1 / -1;
+  font-size: 20px;
+  color: #2E324F;
+}
+
+.createButton {
+  font-size: 14px;
+  margin-left: 15px;
+  color: #5973BD;
+  background-color: transparent;
+  padding: 5px;
+  border: 1px solid #5973BD;
+  border-radius: 5px;
+}
+
+.createButton:hover{
+  cursor: pointer;
+  color: #3B4B76;
+  border: 1px solid #3B4B76;
+}
+
+@media (max-width: 1100px) {
+  .containerProjects{
+    grid-template-columns: repeat(auto-fill, calc(50vw + 30px));
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+  }
+
+  .createButton{
+    margin: 0px;
+  }
+}
