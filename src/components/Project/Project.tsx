@@ -20,7 +20,7 @@ const Project = ({ project }: IProps) => {
       }}
       onClick={() => {
         if (project.status !== ProjectStatus.DELETED)
-          navigate(`MyJira/${project.id}`);
+          navigate(`/MyJira/${project.id}`);
       }}
     >
       <div>

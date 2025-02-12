@@ -11,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/MyJira" element={<Projects />} />
         <Route path="/MyJira/:projectId" element={<Tasks />} />
+        {/*</Route>*/}
         <Route path="*" element={<>Not found</>} />
       </Routes>
     </div>

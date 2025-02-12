@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <div className={style.headerContainer}>
         {isOpenBack && (
-          <div className={style.buttonBack} onClick={() => navigate("/")}>
+          <div className={style.buttonBack} onClick={() => navigate("/MyJira")}>
             <Arrow />
           </div>
         )}
