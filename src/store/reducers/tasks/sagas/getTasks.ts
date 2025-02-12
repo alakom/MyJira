@@ -8,7 +8,7 @@ const getTasks = (projectId: number) => {
   if (projects?.length === 0) {
     getProjects();
   }
-  const tasks: ITask[] = JSON.parse(localStorage.getItem("tasks"));
+  const tasks: ITask[] = JSON.parse(localStorage.getItem("tasks") || "[]");
   if (tasks)
     store.dispatch(
       setTasks(tasks.filter((task) => task.projectId === projectId)),

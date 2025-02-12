@@ -15,9 +15,20 @@ const Task = ({ task }: IProps) => {
     }),
   });
 
+  const combinedRef = (node: HTMLDivElement | null) => {
+    drag(node);
+    // if (drop) {
+    //   if (typeof drop === "function") {
+    //     drop(node);
+    //   } else {
+    //     return drop;
+    //   }
+    // }
+  };
+
   return (
     <div
-      ref={drag}
+      ref={combinedRef}
       style={{
         opacity: isDragging ? 0.5 : 1,
       }}

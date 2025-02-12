@@ -17,21 +17,34 @@ const Column = ({ column, tasks, moveTask }: IProps) => {
     },
   });
 
+  const combinedRef = (node: HTMLDivElement | null) => {
+    drop(node);
+    // if (drop) {
+    //   if (typeof drop === "function") {
+    //     drop(node);
+    //   } else {
+    //     return drop;
+    //   }
+    // }
+  };
+
   const getColumnName = (): string => {
     if (column === TaskStatus.Queue) return "Backlog";
     if (column === TaskStatus.Development) return "В работе";
     if (column === TaskStatus.Done) return "Готово";
+    return "";
   };
 
   const getColumnColor = (): string => {
     if (column === TaskStatus.Queue) return "#FDF3C2";
     if (column === TaskStatus.Development) return "#F1DAEE";
     if (column === TaskStatus.Done) return "#E4F2D9";
+    return "";
   };
 
   return (
     <div
-      ref={drop}
+      ref={combinedRef}
       style={{ backgroundColor: getColumnColor() }}
       className={style.columnContainer}
     >

@@ -8,7 +8,6 @@ import SelectBox from "../SelectBox/SelectBox";
 import TextArea from "../TextArea/TextArea";
 import { useParams } from "react-router-dom";
 import createTask from "../../store/reducers/tasks/sagas/createTask";
-import MultiSelectBox from "../MultiSelectBox/MultiSelectBox";
 interface IOption {
   value: number;
   label: string;
@@ -19,19 +18,19 @@ const CreateTaskModal = () => {
   const isOpenCreateModal = useAppSelector(
     (state) => state.appReducer?.isOpenCreateModal,
   );
-  const tasks = useAppSelector((state) => state.tasksReducer?.tasks);
+  // const tasks = useAppSelector((state) => state.tasksReducer?.tasks);
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [selectedPriority, setSelectedPriority] = useState<number>(1);
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  // const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedValues = Array.from(
-      event.target.selectedOptions,
-      (option) => option.value,
-    );
-    setSelectedOptions(selectedValues);
-  };
+  // const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const selectedValues = Array.from(
+  //     event.target.selectedOptions,
+  //     (option) => option.value,
+  //   );
+  //   setSelectedOptions(selectedValues);
+  // };
 
   const optionsPriority: IOption[] = [
     { value: 0, label: "Высокий приоритет" },
@@ -39,12 +38,12 @@ const CreateTaskModal = () => {
     { value: 2, label: "Низкий приоритет" },
   ];
 
-  const getOptionsTasks = (): IOption[] => {
-    return (tasks || []).map((task) => ({
-      value: task.id,
-      label: task.id.toString(),
-    }));
-  };
+  // const getOptionsTasks = (): IOption[] => {
+  //   return (tasks || []).map((task) => ({
+  //     value: task.id,
+  //     label: task.id.toString(),
+  //   }));
+  // };
 
   const isDisabledButton = (): boolean =>
     title.length === 0 || description.length === 0;
@@ -74,12 +73,13 @@ const CreateTaskModal = () => {
   };
 
   const onCreateTask = () => {
-    createTask({
-      title,
-      projectId: +projectId,
-      description: JSON.stringify(description),
-      priority: selectedPriority,
-    });
+    if (projectId)
+      createTask({
+        title,
+        projectId: +projectId,
+        description: JSON.stringify(description),
+        priority: selectedPriority,
+      });
     onClose();
   };
 
@@ -100,13 +100,6 @@ const CreateTaskModal = () => {
           <div>Описание</div>
           <TextArea value={description} onChange={setDescription} />
         </div>
-        {/*{tasks?.length !== 0 && (*/}
-        {/*  <MultiSelectBox*/}
-        {/*    selectedOptions={selectedOptions}*/}
-        {/*    options={getOptionsTasks()}*/}
-        {/*    handleChange={handleChange}*/}
-        {/*  />*/}
-        {/*)}*/}
       </div>
       <div className={style.createButton}>
         <button onClick={onCreateTask} disabled={isDisabledButton()}>

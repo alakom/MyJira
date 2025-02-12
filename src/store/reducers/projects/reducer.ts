@@ -1,5 +1,5 @@
 import { ProjectAction, SET_PROJECTS } from "./actions";
-import IProject from "models/IProject";
+import IProject from "../../../models/IProject";
 
 interface IProjectState {
   projects: IProject[];

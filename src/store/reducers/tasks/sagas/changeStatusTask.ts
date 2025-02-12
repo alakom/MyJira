@@ -2,7 +2,7 @@ import ITask, { TaskStatus } from "../../../../models/ITask";
 import getTasks from "./getTasks";
 
 const changeStatusTask = (task: ITask, newStatus: TaskStatus) => {
-  const tasks: ITask[] = JSON.parse(localStorage.getItem("tasks"));
+  const tasks: ITask[] = JSON.parse(localStorage.getItem("tasks") || "[]");
   localStorage.setItem(
     "tasks",
     JSON.stringify(

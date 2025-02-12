@@ -39,11 +39,16 @@ export const generateProjects = (): IProject[] => {
 export const getCurrentTimeFormatted = () => {
   const now = new Date();
 
-  const optionsDate = { day: "2-digit", month: "2-digit", year: "numeric" };
-  const optionsTime = { hour: "2-digit", minute: "2-digit", hour12: false };
-
-  const datePart = now.toLocaleDateString("ru-RU", optionsDate);
-  const timePart = now.toLocaleTimeString("ru-RU", optionsTime);
+  const datePart = now.toLocaleDateString("ru-RU", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+  const timePart = now.toLocaleTimeString("ru-RU", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
 
   return `${datePart} ${timePart}`;
 };

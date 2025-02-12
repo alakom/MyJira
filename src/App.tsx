@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Header />
       <Routes>
-        <Route path="//MyJira" element={<Projects />} />
+        <Route path="/MyJira" element={<Projects />} />
         <Route path="/MyJira/:projectId" element={<Tasks />} />
         <Route path="*" element={<>Not found</>} />
       </Routes>

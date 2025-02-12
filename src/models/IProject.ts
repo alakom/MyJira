@@ -1,5 +1,3 @@
-import ITask from "./ITask";
-
 export enum ProjectStatus {
   "ACTIVE",
   "DELETED",

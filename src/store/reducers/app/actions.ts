@@ -1,5 +1,3 @@
-import { SET_TASKS } from "../tasks/actions";
-
 export const SET_IS_OPEN_BACK = "SET_IS_OPEN_BACK";
 export const SET_IS_OPEN_CREATE_MODAL = "SET_IS_OPEN_CREATE_MODAL";
 

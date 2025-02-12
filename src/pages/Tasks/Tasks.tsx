@@ -1,9 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../utils/redux";
+import { useAppDispatch } from "../../utils/redux";
 import getTasks from "../../store/reducers/tasks/sagas/getTasks";
 import { setIsOpenBack } from "../../store/reducers/app/actions";
-import Task from "../../components/Task/Task";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd";
 import Table from "../../components/Table/Table";

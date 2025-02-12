@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const createTask = (task: IProps) => {
-  const tasks: ITask[] = JSON.parse(localStorage.getItem("tasks"));
+  const tasks: ITask[] = JSON.parse(localStorage.getItem("tasks") || "[]");
   const newTask = task as ITask;
   newTask.id = tasks.length + 1;
   newTask.createDate = getCurrentTimeFormatted();

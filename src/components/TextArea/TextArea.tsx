@@ -4,7 +4,7 @@ interface IProps {
   value: string;
   onChange: (content: string) => void;
 }
-const TextArea: React.FC<IProps> = ({ value, onChange }) => {
+const TextArea: React.FC<IProps> = ({ onChange }) => {
   return (
     <Editor
       apiKey="gh7v13jrunw40vpqew9k62m6a4nwptrzcf8zs2sejygbmmlq"
@@ -59,10 +59,6 @@ const TextArea: React.FC<IProps> = ({ value, onChange }) => {
           { value: "First.Name", title: "First Name" },
           { value: "Email", title: "Email" },
         ],
-        ai_request: (request, respondWith) =>
-          respondWith.string(() =>
-            Promise.reject("See docs to implement AI Assistant"),
-          ),
       }}
       onEditorChange={(content) => onChange(content)}
     />

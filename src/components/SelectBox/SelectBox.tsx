@@ -29,7 +29,7 @@ const SelectBox: React.FC<IProps> = ({
 
   const getSelectedLabel = (): string => {
     const opt = options.find((it) => it.value === selectedValue);
-    return opt.label;
+    return opt?.label || "";
   };
 
   return (

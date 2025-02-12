@@ -9,9 +9,9 @@ import {
 const getProjects = () => {
   try {
     let projects: IProject[] | null = JSON.parse(
-      localStorage.getItem("projects"),
+      localStorage.getItem("projects") || "[]",
     );
-    if (!projects) {
+    if (!projects || projects.length === 0) {
       projects = generateProjects();
       localStorage.setItem("projects", JSON.stringify(projects));
       const tasks = generateTasks(projects);
