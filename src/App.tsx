@@ -4,17 +4,17 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Tasks from "./pages/Tasks/Tasks";
 
-const App = (): React.FC => {
+const App = () => {
   return (
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<Projects />} />
-        <Route path="/:projectId" element={<Tasks />} />
+        <Route path="//MyJira" element={<Projects />} />
+        <Route path="/MyJira/:projectId" element={<Tasks />} />
         <Route path="*" element={<>Not found</>} />
       </Routes>
     </div>
-  ) as React.FunctionComponent<{}>;
+  );
 };
 
 export default App;
