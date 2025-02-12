@@ -13,9 +13,8 @@ npm run dev
 
 ## Ссылка на приложение
 
-```
-https://alakom.github.io/MyJira)
-```
+[MyJira](https://alakom.github.io/MyJira)
+
 ## Технологии
 
  Этот раздел в разработке)
